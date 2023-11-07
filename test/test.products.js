@@ -4,6 +4,8 @@ const assert = require("assert");
 
 mongoose.connect("mongodb+srv://pachu1982721:VPXombCDAVDvOaVQ@cluster0.lvefot0.mongodb.net/ecommerce?retryWrites=true&w=majority");
 
+// CON MOCHA
+
 describe('Router de products', () => {
 
     const productsDao = new ProductManager();
@@ -29,5 +31,14 @@ describe('Router de products', () => {
         });
         assert.ok(productos)
     });
+
+    it('encuentra un producto por su título', async function() {
+        const productTitleToSearch = "celular";
+        const productos = await productsDao.getProductByTitle(productTitleToSearch);
+        
+        assert.ok(productos);
+        assert.strictEqual(productos.title, productTitleToSearch);
+    });
+    
     
 });

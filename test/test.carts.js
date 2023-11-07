@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
-const CartManager = require("../dao/test/test.cart.manager");
+const CartManager = require("../dao/test/test.cart.manager")
 const chai = require ("chai")
 
 mongoose.connect("mongodb+srv://pachu1982721:VPXombCDAVDvOaVQ@cluster0.lvefot0.mongodb.net/ecommerce?retryWrites=true&w=majority");
 
 const expect = chai.expect
+
+//Con CHAI
 
 describe('Router de carts', () => {
 
@@ -31,5 +33,14 @@ describe('Router de carts', () => {
         });
         expect(carrito).to.exist;
     });
+
+    it('busca un producto en el carrito por título', async function() {
+        const productTitleToSearch = "camiseta Boca Juniors";
+        const carrito = await cartDao.getcartByTitle(productTitleToSearch);
+    
+        expect(carrito).to.exist;
+        expect(carrito.title).to.equal(productTitleToSearch);
+    });
+ 
     
 });

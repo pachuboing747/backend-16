@@ -108,6 +108,21 @@ class CartManager {
 
         cart.save()
     }
+    async  getcartByTitle (title) {
+        try {
+      
+            const product = await productModel.findOne({ title });
+    
+            if (product) {
+                return product; 
+            } else {
+                return null; 
+            }
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    };
 
 }
 
