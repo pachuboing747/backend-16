@@ -8,7 +8,8 @@
     "seed:products": "node ./scripts/seed.productos.js",
     "seed:user": "node ./scripts/seed.user.js",
     "test:products": "mocha test/test.products.js",
-    "test:carts": "mocha test/test.carts.js"
+    "test:carts": "mocha test/test.carts.js",
+    "test:integration": "mocha test/test.integration.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,8 @@
     "@faker-js/faker": "^8.1.0",
     "chai": "^4.3.10",
     "mocha": "^10.2.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

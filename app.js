@@ -125,4 +125,5 @@
   } catch(e) {
     productionLogger.error('no se ha podido conectar a la base de datos');
   }
+
 })()
